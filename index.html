@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Mejor Amiga Cami 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #a7e3ff, #6ec6fd, #55a0e1, #fd79d7);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            font-family: 'Verdana', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            touch-action: manipulation;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            z-index: 10;
+            max-width: 90%;
+        }
+
+        .header h1 {
+            color: #2d3436;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+
+        .header p {
+            color: #2d3436;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+
+        .flower-wrapper {
+            position: relative;
+            width: min(320px, 80vw);
+            height: min(380px, 95vw);
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .flower {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .petals-container {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .petal {
+            position: absolute;
+            width: 80px;
+            height: 120px;
+            background: linear-gradient(to bottom, #6ec6fd, #1298f3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            top: 50%;
+            left: 50%;
+            transform-origin: center 180px;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .petal:hover, .petal:active {
+            transform: translate(-50%, -50%) scale(1.20) rotate(var(--rotate));
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            background: linear-gradient(to bottom, #1298f3, #2279e6);
+            z-index: 5;
+        }
+
+        /* Posicionamiento de pétalos */
+        .petal:nth-child(1) { 
+            --rotate: 0deg;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        .petal:nth-child(2) { 
+            --rotate: 45deg;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .petal:nth-child(3) { 
+            --rotate: 90deg;
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+        .petal:nth-child(4) { 
+            --rotate: 135deg;
+            transform: translate(-50%, -50%) rotate(135deg);
+        }
+        .petal:nth-child(5) { 
+            --rotate: 180deg;
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+        .petal:nth-child(6) { 
+            --rotate: 225deg;
+            transform: translate(-50%, -50%) rotate(225deg);
+        }
+        .petal:nth-child(7) { 
+            --rotate: 270deg;
+            transform: translate(-50%, -50%) rotate(270deg);
+        }
+        .petal:nth-child(8) { 
+            --rotate: 315deg;
+            transform: translate(-50%, -50%) rotate(315deg);
+        }
+
+        .center-container {
+            position: absolute;
+            top: 140px;
+            transform: translateY(30%);
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .center {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #8b4513, #d2691e, #cd853f);
+            border-radius: 50%;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fdcb6e;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 10px;
+            animation: centerPulse 3s infinite ease-in-out;
+        }
+
+        @keyframes centerPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .center:hover {
+            transform: scale(1.15);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 150px;
+            background: linear-gradient(to bottom, #27ae60, #2ecc71, #27ae60);
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        .leaf {
+            position: absolute;
+            bottom: 80px;
+            left: -20px;
+            width: 40px;
+            height: 30px;
+            background: #27ae60;
+            border-radius: 0 100% 0 100%;
+            transform: rotate(-30deg);
+        }
+
+        .leaf:nth-child(2) {
+            right: -20px;
+            left: auto;
+            transform: rotate(30deg) scaleX(-1);
+        }
+        
+        .message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: rgba(255,255,255,0.98);
+            border: 3px solid #1298f3;
+            border-radius: 20px;
+            padding: 30px;
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            color: #2d3436;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 90%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            line-height: 1.4;
+        }
+
+        .message.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #e17055;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .close-btn:hover {
+            background: #d63031;
+            transform: scale(1.1);
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .heart {
+            position: absolute;
+            color: #e84393;
+            font-size: 20px;
+            animation: floatHeart 3s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(50vh) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        .instructions {
+            margin-top: 20px;
+            text-align: center;
+            color: #2d3436;
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            max-width: 90%;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 480px) {
+            .flower-wrapper {
+                width: 280px;
+                height: 340px;
+            }
+            
+            .petals-container {
+                width: 240px;
+                height: 240px;
+            }
+            
+            .petal {
+                width: 70px;
+                height: 100px;
+                transform-origin: center 150px;
+            }
+            
+            .center-container {
+                top: 120px;
+            }
+            
+            .center {
+                width: 80px;
+                height: 80px;
+                font-size: 0.7rem;
+            }
+            
+            .stem {
+                height: 120px;
+            }
+            
+            .leaf {
+                bottom: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Para mi Mejor Amiga Cami 💖</h1>
+        <p>Una flor especial para una amiga increíble</p>
+    </div>
+
+    <div class="flower-wrapper">
+        <div class="flower">
+            <div class="stem">
+                <div class="leaf"></div>
+                <div class="leaf"></div>
+            </div>
+            <div class="petals-container">
+                <div class="petal" onclick="showMessage(0)"></div>
+                <div class="petal" onclick="showMessage(1)"></div>
+                <div class="petal" onclick="showMessage(2)"></div>
+                <div class="petal" onclick="showMessage(3)"></div>
+                <div class="petal" onclick="showMessage(4)"></div>
+                <div class="petal" onclick="showMessage(5)"></div>
+                <div class="petal" onclick="showMessage(6)"></div>
+                <div class="petal" onclick="showMessage(7)"></div>
+            </div>
+            <div class="center-container">
+                <div class="center" onclick="showMessage(8)">Tócame 💖</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        <p>Toca cada pétalo para descubrir un mensaje especial 💖</p>
+    </div>
+
+    <div class="message" id="messageBox">
+        <button class="close-btn" onclick="closeMessage()">×</button>
+        <div id="messageText"></div>
+    </div>
+
+    <div class="hearts" id="hearts"></div>
+
+    <script>
+        const messages = [
+            "Cami, eres una amiga increíble y estoy muy agradecido de tenerte en mi vida 💖",
+            "Tu amistad es un regalo que valoro más de lo que las palabras pueden expresar 🌻",
+            "Tu sonrisa ilumina mis días y tu apoyo significa todo para mí 💕",
+            "Eres una persona maravillosa, llena de bondad y siempre estás para los demás 🌟",
+            "No importa lo que pase, sé que siempre puedo contar contigo. ¡Eso no tiene precio! 🏠",
+            "Eres mi confidente, mi compañera de aventuras y una de las personas más importantes en mi vida ☀️",
+            "Aprecio cada momento que pasamos juntos, cada risa y cada conversación 🌙",
+            "El mundo es un lugar mejor contigo en él. ¡Gracias por ser exactamente quien eres! 💖",
+            "¡Haz clic en cada pétalo para descubrir todos los mensajes que tengo para ti, mi amiga especial! 🌺"
+        ];
+        
+        const clickedPetals = new Set();
+        let allPetalsClicked = false;
+
+        function showMessage(index) {
+            const messageBox = document.getElementById('messageBox');
+            const messageText = document.getElementById('messageText');
+            
+            messageText.innerHTML = messages[index];
+            messageBox.classList.add('show');
+            
+            createHearts();
+            
+            // Registrar pétalo clickeado
+            if (index < 8) {
+                clickedPetals.add(index);
+                
+                // Verificar si todos los pétalos han sido clickeados
+                if (clickedPetals.size >= 8 && !allPetalsClicked) {
+                    allPetalsClicked = true;
+                    setTimeout(() => {
+                        messageText.innerHTML = "¡Has descubierto todos mis mensajes! Eres la mejor amiga que alguien podría desear. ¡Te quiero mucho, Cami! 💖";
+                        messageBox.classList.add('show');
+                        createHearts();
+                    }, 1000);
+                }
+            }
+        }
+
+        function closeMessage() {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.classList.remove('show');
+        }
+
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = '💖';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDelay = Math.random() * 1000 + 'ms';
+                    heartsContainer.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+        }
+
+        // Cerrar mensaje al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            const messageBox = document.getElementById('messageBox');
+            if (event.target === messageBox) {
+                closeMessage();
+            }
+        });
+
+        // Cerrar mensaje con tecla Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMessage();
+            }
+        });
+    </script>
+</body>
+</html>
