@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para mi Mejor Amiga Cami 💖</title>
+    <title>Para ti, C 💛</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
         
@@ -17,7 +17,7 @@
             margin: 0;
             padding: 20px;
             min-height: 100vh;
-            background: linear-gradient(135deg, #a7e3ff, #6ec6fd, #55a0e1, #fd79d7);
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e, #e17055, #fd79a8);
             background-size: 400% 400%;
             animation: gradientShift 8s ease infinite;
             font-family: 'Verdana', sans-serif;
@@ -93,7 +93,7 @@
             position: absolute;
             width: 80px;
             height: 120px;
-            background: linear-gradient(to bottom, #6ec6fd, #1298f3);
+            background: linear-gradient(to bottom, #fdcb6e, #f39c12);
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.4s ease;
@@ -110,7 +110,7 @@
         .petal:hover, .petal:active {
             transform: translate(-50%, -50%) scale(1.20) rotate(var(--rotate));
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            background: linear-gradient(to bottom, #1298f3, #2279e6);
+            background: linear-gradient(to bottom, #f39c12, #e67e22);
             z-index: 5;
         }
 
@@ -223,7 +223,7 @@
             left: 50%;
             transform: translate(-50%, -50%) scale(0.9);
             background: rgba(255,255,255,0.98);
-            border: 3px solid #1298f3;
+            border: 3px solid #f39c12;
             border-radius: 20px;
             padding: 30px;
             font-size: clamp(1.4rem, 4vw, 2rem);
@@ -351,8 +351,8 @@
 </head>
 <body>
     <div class="header">
-        <h1>Para mi Mejor Amiga Cami 💖</h1>
-        <p>Una flor especial para una amiga increíble</p>
+        <h1>Para mi Mejor Amiga Cami 💛</h1>
+        <p>21 de Septiembre - Una flor especial para ti</p>
     </div>
 
     <div class="flower-wrapper">
@@ -372,13 +372,13 @@
                 <div class="petal" onclick="showMessage(7)"></div>
             </div>
             <div class="center-container">
-                <div class="center" onclick="showMessage(8)">Tócame 💖</div>
+                <div class="center" onclick="showMessage(8)">Tócame 💛</div>
             </div>
         </div>
     </div>
     
     <div class="instructions">
-        <p>Toca cada pétalo para descubrir un mensaje especial 💖</p>
+        <p>Toca cada pétalo para descubrir un mensaje especial 💛</p>
     </div>
 
     <div class="message" id="messageBox">
@@ -390,15 +390,15 @@
 
     <script>
         const messages = [
-            "Cami, eres una amiga increíble y estoy muy agradecido de tenerte en mi vida 💖",
-            "Tu amistad es un regalo que valoro más de lo que las palabras pueden expresar 🌻",
+            "Cami, eres una persona increíble y estoy muy agradecido de tenerte en mi vida 💛",
+            "Tu compañia es un regalo que valoro más de lo que las palabras pueden expresar 🌻",
             "Tu sonrisa ilumina mis días y tu apoyo significa todo para mí 💕",
             "Eres una persona maravillosa, llena de bondad y siempre estás para los demás 🌟",
-            "No importa lo que pase, sé que siempre puedo contar contigo. ¡Eso no tiene precio! 🏠",
+            "No importa lo que pase, sé que siempre puedo contar contigo... Eso no tiene precio! :3 🏠",
             "Eres mi confidente, mi compañera de aventuras y una de las personas más importantes en mi vida ☀️",
             "Aprecio cada momento que pasamos juntos, cada risa y cada conversación 🌙",
-            "El mundo es un lugar mejor contigo en él. ¡Gracias por ser exactamente quien eres! 💖",
-            "¡Haz clic en cada pétalo para descubrir todos los mensajes que tengo para ti, mi amiga especial! 🌺"
+            "El mundo es un lugar mejor contigo en él... Gracias por ser exactamente quien eres! TwT 💖",
+            "¡Haz clic en cada pétalo para descubrir todos los mensajes que tengo para ti, TKMM! 🌺"
         ];
         
         const clickedPetals = new Set();
@@ -421,7 +421,7 @@
                 if (clickedPetals.size >= 8 && !allPetalsClicked) {
                     allPetalsClicked = true;
                     setTimeout(() => {
-                        messageText.innerHTML = "¡Has descubierto todos mis mensajes! Eres la mejor amiga que alguien podría desear. ¡Te quiero mucho, Cami! 💖";
+                        messageText.innerHTML = "¡Has descubierto todos mis mensajes! Eres la mejor amiga que alguien podría desear. ¡Te quiero mucho, Cami! 💛";
                         messageBox.classList.add('show');
                         createHearts();
                     }, 1000);
@@ -441,7 +441,7 @@
                 setTimeout(() => {
                     const heart = document.createElement('div');
                     heart.className = 'heart';
-                    heart.innerHTML = '💖';
+                    heart.innerHTML = '💛';
                     heart.style.left = Math.random() * 100 + '%';
                     heart.style.animationDelay = Math.random() * 1000 + 'ms';
                     heartsContainer.appendChild(heart);
